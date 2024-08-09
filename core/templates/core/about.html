@@ -1,0 +1,126 @@
+{% extends 'core/base.html' %}
+
+{% block title %}About me{% endblock %}
+
+{% block image-header %} about {% endblock %}
+
+{% block title-header %} 
+
+<div>
+    <h1 class="display-4 fw-bold">Miller Ladino</h1>
+</div>
+<div>
+    <h3 class="fs-2">Desarrollador Web</h3>
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+{% load static %}
+
+<div class="row d-flex">
+    <div class="col-4 offset-md-auto">
+        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.png' %} alt="">
+    </div>
+    <div class="col-6">
+        <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim, libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius ex?</h4>
+    </div>
+</div> 
+
+<div class="row d-flex pt-5">
+    <div class="col-12">
+        <h2 class="fw-bold">Formación Académica</h2>
+        <h3>Formación Nº 1</h3>
+        <p><strong>Título obtenido:</strong> Lorem ipsum dolor</p>
+        <p><strong>Descripción:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis distinctio atque praesentium fugiat doloremque, repellendus minus nisi enim nam voluptas velit beatae assumenda! Necessitatibus, eum vitae voluptates sunt quasi optio.</p>
+
+        <hr>
+
+        <h3>Formación Nº 2</h3>
+        <p><strong>Título obtenido:</strong> Lorem ipsum dolor</p>
+        <p><strong>Descripción:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis distinctio atque praesentium fugiat doloremque, repellendus minus nisi enim nam voluptas velit beatae assumenda! Necessitatibus, eum vitae voluptates sunt quasi optio.</p>
+        <hr>
+        <h3>Formación Nº 3</h3>
+        <p><strong>Título obtenido:</strong> Lorem ipsum dolor</p>
+        <p><strong>Descripción:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis distinctio atque praesentium fugiat doloremque, repellendus minus nisi enim nam voluptas velit beatae assumenda! Necessitatibus, eum vitae voluptates sunt quasi optio.</p>
+
+        <hr>
+        <h2 class="fw-bold">Conocimientos</h2>
+        <section class="skills" id="skills">
+            <div class="skills__container" id="skills">
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/html5-svgrepo-com.svg' %} alt="html5">
+                    </div>
+
+                    <div class="skill__texto">
+                        <p class="skill__titulo">HTML5</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/css3-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">CSS3</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/javascript-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">Javascript</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/nodejs-icon-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">NodeJS</p>
+                    </div>
+                </div>
+
+                
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/bootstrap-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">Bootstrap</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/mysql-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">MySQL</p>
+                    </div>
+                </div>
+
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={% static 'core/img/skills/postgresql-logo-svgrepo-com.svg' %} alt="html5">
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">PostgreSQL</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </section>
+    </div>
+
+</div>
+{% endblock %}

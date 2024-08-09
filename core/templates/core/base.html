@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miller Ladino - {% block title %}{% endblock %}</title>
+
+    {% load static %}
+
+    <link href={% static 'core/css/bootstrap.min.css' %} rel="stylesheet">
+    <link rel="stylesheet" href={% static 'core/css/bootstrap.css' %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href={% static 'core/css/app.css' %}>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-light sticky-top" data-bs-theme="light">
+        <div class="container">
+            <a class="navbar-brand" href={% url 'home' %}>Miller Ladino</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href={% url 'home' %}>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={% url 'about-me' %}>About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={% url 'portfolio' %}>Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={% url 'contact' %}>Contact</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CABECERA -->
+    <div class="{% block image-header %} {% endblock %} imagen-fondo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 titulos">
+
+                    {% block title-header %} {% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
+        <div class="container">
+
+            {% block content %} {% endblock %}
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__redes">
+            <ul class="footer__lista">
+                <li class="footer__item">
+                    <a class="footer__icono" href="https://github.com/" target="blank"><i
+                            class="fab fa-github-square fa-1x"></i></a>
+                </li>
+
+                <li class="footer__item">
+                    <a class="footer__icono" href="https://www.linkedin.com/" target="blank"><i
+                            class="fab fa-linkedin-in fa-1x"></i></a>
+                </li>
+
+                <li class="footer__item">
+                    <a class="footer__icono" href="https://twitter.com/" target="blank"><i
+                            class="fab fa-twitter fa-1x"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__texto">
+            <p>Miller Ladino &copy; Todos los Derechos Reservados - 2024</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

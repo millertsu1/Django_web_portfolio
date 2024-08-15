@@ -1,7 +1,8 @@
 from django.db import models
+from django.utils import timezone
 
-""" modelo para formacion """
 
+""" Modelo para formación """
 class Education(models.Model):
     name = models.CharField(max_length=50)
     degree = models.CharField(max_length=50)
@@ -10,30 +11,45 @@ class Education(models.Model):
     date = models.DateField()
     duration = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)   
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Education'
+        verbose_name_plural = 'Educations'
+        ordering = ['-date']
 
     def __str__(self):
         return self.name
 
-""" modelo para experiencia laboral """
-
-class Training(models.Model):
+""" Modelo para experiencia laboral """
+class Job(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
+    image = models.ImageField(upload_to='jobs/')
     date = models.DateField()
     duration = models.IntegerField()
-    capacity = models.IntegerField()
-    image = models.ImageField(upload_to='training_images/', null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Job'
+        verbose_name_plural = 'Jobs'
+        ordering = ['-date']
 
     def __str__(self):
         return self.name
-
-""" modelo para habilidades """
-
+    
 class Skill(models.Model):
-    name = models.CharField(max_length=50)
-    level = models.IntegerField()
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='skills/')
+    years_experience = models.IntegerField(default=0)
+    created = models.DateTimeField(auto_now_add=True)    
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Skill'
+        verbose_name_plural = 'Skills'
+        ordering = ['years_experience']
 
     def __str__(self):
-        return self.name
-
+        return self.title

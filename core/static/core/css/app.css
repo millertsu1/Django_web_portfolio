@@ -43,7 +43,7 @@
 .footer {
     grid-area: footer;
     background-color: #ffd691;
-    color: #dadada;
+    color: #000;
     display: flex;
     flex-direction: column;
     align-items: center;

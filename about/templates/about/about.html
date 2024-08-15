@@ -1,0 +1,79 @@
+{% extends 'core/base.html' %}
+
+{% block title %}About me{% endblock %}
+
+{% block image-header %} about {% endblock %}
+
+{% block title-header %}
+
+<div>
+    <h1 class="display-4 fw-bold">Miller Ladino</h1>
+</div>
+<div>
+    <h3 class="fs-2">Desarrollador Web</h3>
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+{% load static %}
+
+<div class="row d-flex">
+    <div class="col-4 offset-md-auto">
+        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.png' %} alt="">
+    </div>
+    <div class="col-6">
+        <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim,
+            libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius
+            ex?</h4>
+    </div>
+</div>
+
+<div class="row pt-5">
+    <div class="col-12">
+
+        <h2 class="fw-bold text-center">Education</h2>
+<div class=" container-fluid d-flex justify-content-between flex-wrap row-gap-3">
+        {% for education in educations %}
+        
+        <div class="card d-flex " style="width: 25rem;">
+            <img src={{ education.image.url }} class="card-img-top" alt={{ education.name }} >
+            <div class="card-body">
+                <h5 class="card-title">{{ education.name }}</h5>
+                <p class="card-text">{{ education.description }}</p>
+            </div>
+
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+        <h2 class="fw-bold">Conocimientos</h2>
+        <section class="skills" id="skills">
+            <div class="skills__container" id="skills">
+                {% for skill in skills %}
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={{ skill.image.url}} alt={{ skill.title }}>
+                    </div>
+                    <div class="skill__texto">
+                        <p class="skill__titulo">{{ skill.title }}</p>
+                        <small>{{skill.years_experience }} years</small>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </section>
+        </section>
+    </div>
+
+</div>
+{% endblock %}

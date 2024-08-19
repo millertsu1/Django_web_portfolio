@@ -21,14 +21,14 @@
 
 {% for project in page_obj %}
 <div class="card my-5">
-    <div class="card-body d-flex">
+    <div class="card-body d-flex align-items-center">
         <div class="col-lg-3 col-md-4 offset-lg-1 mx-3">
-            <img class="img-fluid" src="{{ project.image.url }}" alt="" data-bs-toggle="modal" data-bs-target="#modal{{ project.id }}">
+            <img class="img-fluid rounded" src="{{ project.image.url }}" alt="" data-bs-toggle="modal" data-bs-target="#modal{{ project.id }}">
         </div>
         <div>
             <h4 class="card-title">{{ project.title }}</h4>
             {% for tag in project.tags.all %}
-            <span class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</span>
+            <span class="badge mb-3" style="background-color: {{ tag.color }};">{{ tag.name }}</span>
             {% endfor %}
             <p class="card-text">{{ project.description }}</p>
             {% if project.demo %}

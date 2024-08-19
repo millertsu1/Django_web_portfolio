@@ -8,3 +8,4 @@ def about(request):
      skills = Skill.objects.all()
 
      return render(request, 'about/about.html', {'educations': educations, 'jobs': jobs, 'skills': skills})
+ 

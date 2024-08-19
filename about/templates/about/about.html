@@ -7,10 +7,10 @@
 {% block title-header %}
 
 <div>
-    <h1 class="display-4 fw-bold">Miller Ladino</h1>
+    <h1 class="display-4 fw-bold text-body-emphasis">Miller Ladino</h1>
 </div>
 <div>
-    <h3 class="fs-2">Desarrollador Web</h3>
+    <h3 class="fs-2 text-body-emphasis">Web Developer</h3>
 </div>
 
 {% endblock %}
@@ -21,41 +21,40 @@
 
 {% load static %}
 
-<div class="row d-flex">
+<div class="row d-flex align-items-center justify-content-center">
     <div class="col-4 offset-md-auto">
-        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.png' %} alt="">
+        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/avatar_Miller.jpg' %} alt="">
     </div>
+    
     <div class="col-6">
-        <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim,
-            libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius
-            ex?</h4>
+        <h4>Hello, my name is Miller Ladino, and I am a passionate Web Developer with a diverse skill set that complements my expertise in SEO, blog content development, and video editing. I have a quick adaptability to various project environments, allowing me to integrate seamlessly into different teams and work settings. </h4>
     </div>
 </div>
 
-<div class="row pt-5">
-    <div class="col-12">
+<div class="d-flex justify-content-center pt-5">
+    <div class="col-10">
 
         <h2 class="fw-bold text-center">Education</h2>
-<div class=" container-fluid d-flex justify-content-between flex-wrap row-gap-3">
-        {% for education in educations %}
-        
-        <div class="card d-flex " style="width: 25rem;">
-            <img src={{ education.image.url }} class="card-img-top" alt={{ education.name }} >
-            <div class="card-body">
-                <h5 class="card-title">{{ education.name }}</h5>
-                <p class="card-text">{{ education.description }}</p>
+        <div class=" container d-flex justify-content-between flex-wrap row-gap-3">
+            {% for education in educations %}
+
+            <div class="card d-flex " style="width: 20rem;">
+                <img src={{ education.image.url }} class="card-img-top" alt={{ education.name }}>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ education.name }}</h5>
+                    <p class="card-text">{{ education.description }}</p>
+                </div>
+
+                <!-- <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div> -->
             </div>
 
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
+            {% endfor %}
         </div>
 
-        {% endfor %}
-    </div>
-
-        <h2 class="fw-bold">Conocimientos</h2>
+        <h2 class="fw-bold text-center mt-5">Conocimientos</h2>
         <section class="skills" id="skills">
             <div class="skills__container" id="skills">
                 {% for skill in skills %}
